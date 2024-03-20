@@ -1,0 +1,26 @@
+<div class="mt-4 col-12 row">
+    {%  if threads is empty %}
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <p>No Article Found</p>
+                </div>
+            </div>
+        </div>
+    {% else %}
+
+        {% for thread in threads %}
+            <div class="col-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ thread.title }}</h5>
+                        <p class="card-text">
+                            {{ thread.message|raw }}..
+                        </p>
+                        <a href="" class="btn btn-primary">View Full Thread</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    {% endif %}
+</div>
